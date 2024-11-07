@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# 2048 with Obstacles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup and Development
 
-Currently, two official plugins are available:
+Install node modules and run in dev mode
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```shellscript
+npm install
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Component Diagram
+<img width="733" alt="Screenshot 2024-11-07 at 15 32 59" src="https://github.com/user-attachments/assets/31507303-792c-487f-988a-6214d50eae01">
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Data Flow Diagram
+User start game:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+<img width="708" alt="Screenshot 2024-11-07 at 16 16 48" src="https://github.com/user-attachments/assets/41455ebb-2bff-4cc6-9a3c-b143c0a0f094">
+
+User make a move:
+
+<img width="569" alt="Screenshot 2024-11-07 at 16 29 11" src="https://github.com/user-attachments/assets/148b8284-acf9-48ae-a0de-946ed4e32f52">
+
+## State Diagram
+
+<img width="440" alt="image" src="https://github.com/user-attachments/assets/c970bcd0-6e5a-419f-84b2-298ba0aa7820">
+
+<img width="673" alt="Screenshot 2024-11-07 at 15 28 10" src="https://github.com/user-attachments/assets/f774d2fd-5cac-4ab8-a2ec-cfcff3f8ebd1">
+
+
+
+
+
+
+
