@@ -1,5 +1,3 @@
-// gameLogic.ts
-
 import {
   cloneGrid,
   getTile,
@@ -247,7 +245,7 @@ const isGameWon = (grid: Grid): boolean => {
   return grid.some((row) => row.some((tile) => tile.value === TARGET_TILE));
 };
 
-// Handle move and return updated grid and game-over status
+// Handle move and return updated grid and game status
 const handleMove = (
   oldGrid: Grid,
   direction: Direction
@@ -257,15 +255,6 @@ const handleMove = (
   const { isMoved } = moveTiles(grid, direction);
 
   if (!isMoved) return;
-
-  const gameWon = isGameWon(grid);
-
-  if (gameWon) {
-    return {
-      grid,
-      gameState: GameState.Win,
-    };
-  }
 
   if (hasEmptyTile(grid)) {
     setNewNumberTile(grid);
@@ -277,7 +266,9 @@ const handleMove = (
     return { grid, gameState: GameState.Lose };
   }
 
-  return { grid, gameState: GameState.Ongoing };
+  const gameWon = isGameWon(grid);
+
+  return { grid, gameState: gameWon ? GameState.Win : GameState.Ongoing };
 };
 
 // Initialize a grid with the specified size and number of obstacles
