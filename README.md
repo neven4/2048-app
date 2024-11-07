@@ -1,5 +1,7 @@
 # 2048 with Obstacles
 
+To move, use the `Arrow keys` on the keyboard
+
 ## Setup and Development
 
 Install node modules and run in dev mode
