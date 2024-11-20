@@ -1,12 +1,13 @@
 import styles from "./tile.module.css";
 import { TileType } from "../../logic/tile";
+import React from "react";
 
 type Props = {
   value: number;
   type: TileType;
 };
 
-export const Tile = ({ value, type }: Props) => {
+export const Tile = React.memo(({ value, type }: Props) => {
   const styleByTileType = {
     [TileType.Empty]: styles.empty,
     [TileType.Obstacle]: styles.obstacle,
@@ -18,4 +19,4 @@ export const Tile = ({ value, type }: Props) => {
       {value > 0 ? value : ""}
     </div>
   );
-};
+});
